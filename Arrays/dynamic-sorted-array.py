@@ -63,3 +63,7 @@ class DynamicSortedArray:
         self._size -= 1
         if self._capacity > 1 and self._size <= self._capacity / 4:
             self._half_size()
+    
+    def traverse(self):
+        for i in range(0, self._size):
+            callback(self._array[i])

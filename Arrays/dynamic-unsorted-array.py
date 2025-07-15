@@ -51,5 +51,9 @@ class DynamicUnsortedArray:
 
     def delete_by_index(self, index):
         del self._array[index]
+
+    def traverse(self):
+        for i in range(0, self._size):
+            callback(self._array[i])
     
     
