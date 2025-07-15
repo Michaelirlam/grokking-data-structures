@@ -40,8 +40,22 @@ class DynamicSortedArray:
                 return index
         return None
     
+    def binary_search(self, target):
+        left = 0
+        right = self._size - 1
+        while left <= right:
+            mid_index = (left + right) // 2
+            mid_value = self._array[mid_index]
+            if mid_value == target:
+                return mid_value
+            elif mid_value > target:
+                right = mid_index -1
+            else:
+                left = mid_index + 1
+        return None
+    
     def delete(self, target):
-        index = self.find(target)
+        index = self.binary_search(target)
         if index is None:
             raise(ValueError(f"Unable to delete element {target}: the entry is not in the array"))
         for i in range(index, self._size - 1):
