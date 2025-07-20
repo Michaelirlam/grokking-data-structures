@@ -79,6 +79,6 @@ class SortedSinglyLinkedList:
         result = []
         current = self._head
         while current is not None:
-            result.append(func(current.data))
+            result.append(func(current.data()))
             current = current.next()
         return result
